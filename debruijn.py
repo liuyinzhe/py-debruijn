@@ -54,7 +54,7 @@ def output_contigs(g):
     V = g[0]
     E = g[1]
     # Pick starting node (the vertex with zero in degree)
-    start = V.keys()[0]
+    start = list(V.keys())[0]
     for k in V.keys():
         if V[k].indegree < V[start].indegree:
             start = k
@@ -75,8 +75,7 @@ def print_graph(g):
     V = g[0]
     E = g[1]
     for k in V.keys():
-        print "name: ", V[k].label, ". indegree: ", V[k].indegree, ". outdegree: ", V[k].outdegree
-        print "Edges: "
+        print("name: ", V[k].label, ". indegree: ", V[k].indegree, ". outdegree: ", V[k].outdegree)
+        print("Edges: ")
         for e in E[k]:
-            print e.label
-        print
+            print(e.label)
